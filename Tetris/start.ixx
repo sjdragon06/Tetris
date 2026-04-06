@@ -5,7 +5,7 @@ import header;
 
 export module start;
 
-namespace starttemp {
+namespace {
 	int buffer;
 }
 
@@ -19,14 +19,23 @@ export void start() {
 	while ( Key::Keyhit() == false) {
 		;
 	}
+	Key::Getch();
 }
 
 export void menu() {
 	Clearscreen();
-	cout << "ESC : HELP" << endl;
+	cout << "0, HELP" << endl;
 	cout << "1. Game Start" << endl;
 	cout << "2. Setting" << endl;
 	while (Key::Keyhit() == false) {
 		;
+	}
+	buffer = Key::Getch();
+	switch (buffer) {
+	case 0:
+		;
+		break;
+	case 1:
+		break;
 	}
 }

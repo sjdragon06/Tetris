@@ -5,8 +5,8 @@ export module gameutile;
 
 export class board {
 private:
-	static const int WIDTH = 10;
-	static const int HEIGHT = 20;
+	static const int WIDTH{10};
+	static const int HEIGHT{20};
 	int board_perm[HEIGHT][WIDTH][2];
 public:
 	board() { reset_board(); };
@@ -22,6 +22,9 @@ public:
 			}
 		}
 	}
+
+	int getboard(int y, int x) const { return board_perm[y][x][0]; }
+	int getboardcolor(int y, int x) const { return board_perm[y][x][1]; }
 };
 
 export class block {
@@ -33,7 +36,7 @@ private:
 	static const int blocklist[7][4][4][4];
 public:
 	block(int t, int startX, int startY)
-		:block_type(t), block_rotation(0), x(startX), y(startY) {}
+		:block_type{ t }, block_rotation{ 0 }, x{ startX }, y{ startY } {}
 	~block() {}
 };
 
