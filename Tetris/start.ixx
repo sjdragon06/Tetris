@@ -22,7 +22,7 @@ export void start() {
 	Key::Getch();
 }
 
-export void menu() {
+export int menu() {
 	Clearscreen();
 	cout << "0, HELP" << endl;
 	cout << "1. Game Start" << endl;
@@ -31,11 +31,6 @@ export void menu() {
 		;
 	}
 	buffer = Key::Getch();
-	switch (buffer) {
-	case 0:
-		;
-		break;
-	case 1:
-		break;
-	}
+	if (buffer >= 0) { return buffer; }
+	else { return -1; }
 }
